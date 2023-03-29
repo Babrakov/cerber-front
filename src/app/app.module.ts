@@ -7,12 +7,27 @@ import { PhoneFormComponent } from './phone-form/phone-form.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PhoneService } from './service/phone.service';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RegisterComponent } from './register/register.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhoneListComponent,
-    PhoneFormComponent
+    PhoneFormComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +35,10 @@ import { PhoneService } from './service/phone.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PhoneService],
+  providers: [
+    PhoneService,
+    authInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
