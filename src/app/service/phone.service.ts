@@ -11,7 +11,7 @@ export class PhoneService {
   private phonesUrl: string;
 
   constructor(private http: HttpClient) {
-    this.phonesUrl = 'http://localhost:8080/phones';
+    this.phonesUrl = 'http://localhost:8080/api/test/phones';
   }
 
   public findAll(): Observable<Phone[]> {
